@@ -1,5 +1,6 @@
 # UAV Simulation Package based on Iris Quadcorpter in ROS, Gazebo and MAVROS
 
+## Pre-requsites Installation
 
 ## Installing Ardupilot and MAVProxy
 
@@ -132,7 +133,7 @@ catkin build
 update global variables
 ```
 source ~/.bashrc
-
+```
 ## Install Gazebo plugin for APM (ArduPilot Master) :
 ```
 cd ~
@@ -143,7 +144,7 @@ cd ardupilot_gazebo
 ```
 git checkout dev
 ```
-build and install plugin
+Build and install plugin
 ```
 mkdir build
 cd build

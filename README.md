@@ -1,6 +1,9 @@
 # UAV Simulation Package based on Iris Quadcorpter in ROS, Gazebo and MAVROS
 
 ## Pre-requsites Installation
+   1) Installing Ardupilot and MAVProxy 
+   2) Install ROS and Setup Catkin Workspace
+   3) Install Gazebo plugin for APM 
 
 ## Installing Ardupilot and MAVProxy
 
@@ -51,13 +54,13 @@ Run SITL (Software In The Loop) once to set params:
 cd ~/ardupilot/ArduCopter
 sim_vehicle.py -w
 ```
-## Install ROS and Setup Catkin  
+## Install ROS and Setup Catkin Workspace
 
 In this tutorial we are using **Ubuntu 18.04** and **ROS Melodic**
 
 Code blocks are meant to be typed in Terminal windows. "Control+Alt+T" opens a new Terminal window.
 
-## 1. Install ROS
+### 1. Install ROS
 
    - Do _Desktop-full Install_
    - Follow until _Step 1.7_ at the end of the page
@@ -65,7 +68,7 @@ Code blocks are meant to be typed in Terminal windows. "Control+Alt+T" opens a n
    First, install **ROS Melodic** using the following instructions: http://wiki.ros.org/melodic/Installation/Ubuntu
 
 
-## 2. Set Up Catkin workspace
+### 2. Set Up Catkin workspace
 
 We use `catkin build` instead of `catkin_make`. Please install the following:
 ```
@@ -79,7 +82,7 @@ cd ~/catkin_ws
 catkin init
 ```
 
-## 3. Dependencies installation
+### 3. Dependencies installation
 
 Install `mavros` and `mavlink` from source:
 ```
@@ -104,13 +107,14 @@ update global variables
 source ~/.bashrc
 ```
 
-install geographiclib dependancy 
+install geographiclib dependancy  
+  (It takes time, depends on your system specifications) 
 ```
 sudo ~/catkin_ws/src/mavros/mavros/scripts/install_geographiclib_datasets.sh
 ```
 
 
-## 4. Clone Simulation ROS package 
+### Clone ROS Simulation package 
 
 ```
 cd ~/catkin_ws/src
@@ -123,7 +127,7 @@ run the following to tell gazebo where to look for the iq models
 echo "GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$HOME/catkin_ws/src/iq_sim/models" >> ~/.bashrc
 ```
 
-## 5. Build instructions
+### 5. Build instructions
    Inside `catkin_ws`, run `catkin build`:
 
 ```
@@ -159,19 +163,5 @@ Set paths for models:
 ```
 echo 'export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models' >> ~/.bashrc
 . ~/.bashrc
-```
-
-### Run Simulator
-
-
-In one Terminal (Terminal 1), run Gazebo:
-```
-gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
-```
-
-In another Terminal (Terminal 2), run SITL:
-```
-cd ~/ardupilot/ArduCopter/
-sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 ```
 

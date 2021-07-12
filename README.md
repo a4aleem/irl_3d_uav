@@ -1,11 +1,11 @@
 # UAV Simulation Package based on Iris Quadcorpter in ROS, Gazebo and MAVROS
 
 ## Pre-requsites Installation
-   1) Installing Ardupilot and MAVProxy 
+   1) Install Ardupilot and MAVProxy 
    2) Install ROS and Setup Catkin Workspace
    3) Install Gazebo plugin for APM 
 
-## Installing Ardupilot and MAVProxy
+## Install Ardupilot and MAVProxy
 
 ### Clone ArduPilot
 

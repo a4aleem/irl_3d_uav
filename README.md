@@ -138,7 +138,7 @@ update global variables
 ```
 source ~/.bashrc
 ```
-## Install Gazebo plugin for APM (ArduPilot Master) :
+## Install Gazebo plugin for APM (ArduPilot) :
 ```
 cd ~
 git clone https://github.com/khancyr/ardupilot_gazebo.git
